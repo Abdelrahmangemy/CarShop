@@ -7,25 +7,25 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Shop</a>
+        <a class="nav-link" href="{{route('shop')}}">Shop</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Category
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Cars</a>
-          <a class="dropdown-item" href="#">Phones</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Computers</a>
+          <?php $cats = DB::table('categories')->get(); ?>
+          @foreach($cats as $cat)
+                    <a class="dropdown-item" href="{{url('category',$cat->id)}}">{{ucwords($cat->name)}}</a>
+          @endforeach
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="#">Login</a>
+        <a class="nav-link " href="{{route('login')}}">Login</a>
       </li>
     </ul>
   </div>

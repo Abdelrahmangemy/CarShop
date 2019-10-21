@@ -22,9 +22,25 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
         $products = Products_model::all();
         return view('frontend.home', compact('products'));
+    }
+
+    public function shop()
+    {
+         $products = Products_model::all();
+        return view('frontend.shop', compact('products'));
+    }
+
+    public function showCates($id)
+    {
+        $category_products = Products_model::where('category_id',$id)->get();
+
+        $id_ = $id ;
+
+        return view('frontend.category_list_pro',compact('category_products','id_'));
     }
 }

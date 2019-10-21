@@ -13,6 +13,9 @@
 /* front end routes */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/shop', 'HomeController@shop')->name('shop');
+Route::get('/category/{id}','HomeController@showCates');
 
 
 

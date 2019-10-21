@@ -12,3 +12,4 @@ class Products_model extends Model
     	'id', 'pro_name', 'pro_code', 'pro_price', 'pro_info', 'image', 'spl_price','stock','category_id', 'created_at', 'updated_at'
     ];
 }
+ 
