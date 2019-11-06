@@ -27,8 +27,9 @@
                   <span class="price text-muted float-right">$ {{$product->spl_price}} </span>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                    <a href="{{url('productDetail',$product->id)}}" class="btn btn-sm btn-outline-secondary" >View Product </a>                      
+
+                    <a href="{{url('cart/addItem',$product->id)}}" class="btn btn-sm btn-outline-secondary">Add to Cart <i class="fa fa-shopping-cart"></i></a>
                     </div>
                     <small class="price text-muted float-right">{{$product->created_at}}</small>
                   </div>

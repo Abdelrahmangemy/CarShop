@@ -26,9 +26,9 @@
                   <p class="card-body">{{$product->pro_name}}</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                    </div>
+                      <a href="{{url('productDetail',$product->id)}}" class="btn btn-sm btn-outline-secondary" >View Product </a>
+                      <a href="{{url('cart/addItem',$product->id)}}" class="btn btn-sm btn-outline-secondary">Add to Cart <i class="fa fa-shopping-cart"></i></a>
+                    </div>  
                   </div>
                 </div>
               </div>

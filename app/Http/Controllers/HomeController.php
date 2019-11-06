@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Products_model;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -42,5 +43,12 @@ class HomeController extends Controller
         $id_ = $id ;
 
         return view('frontend.category_list_pro',compact('category_products','id_'));
+    }
+
+    public function detailPro($id)
+    {
+        $products = DB::table('products')->where('id',$id)->get();
+
+        return view('frontend.product_detail',compact('products'));
     }
 }
