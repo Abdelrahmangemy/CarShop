@@ -1,11 +1,14 @@
-@extends('layouts.app')
+@extends('frontend.master')
+@section('title','Login Page')
 
 @section('content')
-<div class="container">
+<div class="container"><br>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Login') }} If don't have account please go to 
+                    <a href="{{route('register')}}">Register </a>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

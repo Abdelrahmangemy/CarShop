@@ -30,6 +30,7 @@
       <li class="nav-item">
                 <a href="{{url('WishList')}}" class="nav-link">
                     <i class="fa fa-star"></i> Wishlist
+                    <span style="color: green;font-weight: bold;">{{(App\Wishlist_model::count())}}</span>
                 </a>
             </li>
             <?php if(Auth::check()){ ?>

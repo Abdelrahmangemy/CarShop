@@ -49,7 +49,7 @@ class CartController extends Controller
 
     	}else {
 
-    		return back()->with('status','please sheck your qauntity is more than products stock ');
+    		return back()->with('error','please check your quantity is more than products stock ');
     	}
     }
 

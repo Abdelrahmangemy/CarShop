@@ -4,7 +4,7 @@
     <script>
         $(document).ready(function(){
             <?php for($i=1;$i<20;$i++){?>
-$('#upCart<?php echo $i;?>').on('change keyup', function(){
+            $('#upCart<?php echo $i;?>').on('change keyup', function(){
                 var newqty = $('#upCart<?php echo $i;?>').val();
                 var rowId = $('#rowId<?php echo $i;?>').val();
                 var proId = $('#proId<?php echo $i;?>').val();

@@ -13,12 +13,12 @@ class CreateOrdersProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders_product', function (Blueprint $table) {
+        Schema::create('order_model_products_model', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('tax');
             $table->integer('total');
-            $table->integer('product_id');
-            $table->integer('orders_id');
+            $table->integer('products_model_id');
+            $table->integer('order_model_id');
             $table->integer('qty');
             $table->timestamps();
         });

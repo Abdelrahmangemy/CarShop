@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Address_model;
+use App\Order_model;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +23,27 @@ class CheckoutController extends Controller
 
     		return redirect('login');
     	}
+    }
+
+    public function address(Request $request)
+    {
+        $this->validate($request,[
+            'fullname'=>'required|min:5|Max:35',
+            'pincode'=>'required|numeric',
+            'city'=>'required|min:5|max:25',
+            'state'=>'required|min:5|max:35',
+            'country'=>'required'
+        ]);
+
+        $request['user_id']=Auth::user()->id;
+
+        Address_model::create($request->all());
+
+        Order_model::createOrder();
+
+        Cart::destroy();
+
+        return view('profile.thanksyou');
 
 
     }

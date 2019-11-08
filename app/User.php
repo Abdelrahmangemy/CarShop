@@ -32,6 +32,12 @@ class User extends Authenticatable
     {
         return $this->admin;
     }
+
+    public function orders()
+    {
+        //user one has many  orders
+        return $this->hasMany(Order_model::class,'user_id');
+    }
     /**
      * The attributes that should be cast to native types.
      *

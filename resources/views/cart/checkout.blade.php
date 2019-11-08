@@ -128,7 +128,7 @@
                                             <option value="Ucrane">Ucrane</option>
                                             <option value="Canada">Canada</option>
                                             <option value="Dubai">Dubai</option>
-                                            <option value="Dubai">Cairo</option>
+                                            <option value="Dubai">Egypt</option>
                                         </select>
                                         <span style="color:red">{{ $errors->first('country') }}</span>
                                     </div>
@@ -141,7 +141,7 @@
                                     </div>
                                 </div>
                             </form>
-
+                            @include('frontend.paypal')
                         </div>
                     </div>
                 </div>

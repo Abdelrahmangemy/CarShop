@@ -25,6 +25,18 @@ Route::get('/cart/addItem/{id}','CartController@addItem');
 Route::put('/cart/update/{id}','CartController@update');
 Route::get('/cart/remove/{id}','CartController@destroy');
 Route::get('checkout','CheckoutController@index');
+// Profile must be Login first
+Route::group(['middleware'=>'auth'],function(){
+	Route::get('/profile','ProfileController@index');
+	Route::get('/orders','ProfileController@orders');
+	Route::get('/address','ProfileController@address');
+	Route::post('/updateAddress','ProfileController@updateAddress');
+	Route::get('/password','ProfileController@password');
+	Route::put('/updatePassword','ProfileController@updatePassword');
+	Route::get('/WishList','HomeController@View_Wishist');
+	Route::post('addToWishList','HomeController@addWishlist')->name('addToWishList');
+	Route::get('/removeWishList/{id}','HomeController@removeWishList');
+});
 
 
 /* front end routes */
@@ -35,6 +47,7 @@ Route::get('checkout','CheckoutController@index');
 /* admin routes */
 
 Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::group(['prefix'=>'admin', 'middleware'=>['auth','admin']], function() {
 
 	Route::get('/', function () {
@@ -43,4 +56,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth','admin']], function() {
 	Route::resource('product','ProductController');
 	Route::resource('category','CategoriesController');
 	Route::resource('users','UserController');
+	//for Shipping address must login first so i'll put here 
+	Route::post('/formvalidate','CheckoutController@address');
+
 });

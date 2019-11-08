@@ -3,16 +3,7 @@
 @section('content')
 
 <main role="main">
-  		
- 	<section>
- 		<div class="container" style="text-align: center;">
-			<h1 class="Jumbotron-heading">Car Shop </h1>
-			<p class="lead text-muted">
-				<a href="" class="btn btn-primary">cars </a>
-				<a href="" class="btn btn-secondary">phones </a>
-			</p> 			
- 		</div>
- 	</section>
+
 
       <div class="album py-5 bg-light">
         <div class="container">
