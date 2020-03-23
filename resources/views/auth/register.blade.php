@@ -1,8 +1,7 @@
-@extends('Frontend.master')
-@section('title','Register Page')
+@extends('layouts.app')
 
 @section('content')
-<div class="container"><br>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

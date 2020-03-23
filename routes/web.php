@@ -12,8 +12,12 @@
 */
 /* front end routes */
 
+Auth::routes();
+
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+/*
 Route::get('/shop', 'HomeController@shop')->name('shop');
 Route::get('/category/{id}','HomeController@showCates');
 Route::get('/contact',function(){
@@ -44,9 +48,9 @@ Route::group(['middleware'=>'auth'],function(){
 
 
 
-/* admin routes */
+/* admin routes 
 
-Auth::routes();
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::group(['prefix'=>'admin', 'middleware'=>['auth','admin']], function() {
 
@@ -60,3 +64,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth','admin']], function() {
 	Route::post('/formvalidate','CheckoutController@address');
 
 });
+*/
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
